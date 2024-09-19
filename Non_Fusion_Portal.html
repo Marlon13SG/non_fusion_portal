@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -11,17 +11,38 @@
   <div class="col align-items-center">
 <!-- Background -->
  <style>
-body {
-  background-image: url('OIP.jpg');
+/* body {
+  background-image: url('Exelon_logo.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: top right;
+  z-index:-1000;
+} */
+#logo{
+  position: absolute; 
+  top: 0px; 
+  right: 0px;
+  z-index: 2;
+  width: 20%;
+  height: auto;
 }
 </style>
+<!--popover-->
+<style>
+  .popover {
+      max-width: none;
+  }
+  .popover-header {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+  }
+</style>
+<!---->
+<img src="Exelon_logo.jpg" id="logo"/>
 <!-- NAVIGATION SAMPLE -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="file:///H:/Non_Fusion_Portal.html"><b>Non Fusion Portal</b></a>
+<a class="navbar-brand" href="file:///H:/Non_Fusion_Portal.html"><b>SPP Middleware Portal</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,6 +67,27 @@ body {
           <a class="nav-link active" aria-current="page" href="https://adsearch.exeloncorp.com/adsearch/ServiceAccountUpdate" target="_blank">ADSearch</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#MWSCHEDULE">
+            MW SCHEDULE</a>
+          <!-- Modal -->
+<div class="modal fade modal-xl" id="MWSCHEDULE" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Schedule</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MWMWSCHED.jpg" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="http://lms.exeloncorp.com/LandingPage/" target="_blank">LMS</a>
         </li>
         <li class="nav-item dropdown">
@@ -60,153 +102,404 @@ body {
 			<li><a class="dropdown-item" href="https://exelonnow.service-now.com/nav_to.do?uri=%2F$oc_groups.do" target="_blank">On-Call Schedules</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="https://ags.exeloncorp.com/identity/faces/home?_afrLoop=65623968998341380&_adf.ctrl-state=wblhokds4_73" target="_blank">AGS</a></li>
+            <li><a class="dropdown-item" href="https://iga.exelonds.com/iga/accessRequest/accessRequest.jsf#/accessRequest/manageAccess/add?quickLink=Request%20Access" target="_blank">Access Management Portal AMP</a></li>
           </ul>
         </li>
-<!-- further checking
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
--->
     </div>
   </div>
 </nav>
-<!-- Example single danger button -->
-<div class="btn-group">
+<!-- DATA POWER Example single danger button POPOVER-->
+  <div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Data Power
+                     Data Power
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#DATAPOWER_SERVERS">PROD Servers</a></li>
-    <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/DataPower_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
-	<li><hr class="dropdown-divider"></li>
-	<li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/datapower?form.timepicker=-15m%40m&form.span_picker1=&form.contract_type_token=*&form.system_token=*&form.sub_system_token=*&form.environment_token=*&form.type_token=*&form.source_host_token=*&form.reference_name_token=*&form.url_token=&form.host_details_token=&form.display_thresholds_token=&form.display_row_token=15&form.overall_status=*&form.interface_state_status=*&form.availability_status=*&form.response_code_status=*&form.response_time_status=*&form.all_status=TOTALS&form.seperate_filters_token=(%22display_overall%22%3D%22*%22%20AND%20%22display_avail%22%3D%22*%22%20AND%20%22display_interface_state%22%3D%22*%22%20AND%20%22display_rcode%22%3D%22*%22%20AND%20%22display_rtime%22%3D%22*%22%20)&form.all_filters_token=(%22display_overall%22%3D%22*%22%20OR%20%22display_avail%22%3D%22*%22%20OR%20%22display_interface_state%22%3D%22*%22%20OR%20%22display_rcode%22%3D%22*%22%20OR%20%22display_rtime%22%3D%22*%22)" target="_blank">Datapower Splunk</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverDATAPOWER">Servers</a></li>
+  <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/ered/index.php/DataPower_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
+  <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/datapower?form.timepicker=-15m%40m&form.span_picker1=&form.contract_type_token=*&form.system_token=*&form.sub_system_token=*&form.environment_token=*&form.type_token=*&form.source_host_token=*&form.reference_name_token=*&form.url_token=&form.host_details_token=&form.display_thresholds_token=&form.display_row_token=15&form.overall_status=*&form.interface_state_status=*&form.availability_status=*&form.response_code_status=*&form.response_time_status=*&form.all_status=TOTALS&form.seperate_filters_token=(%22display_overall%22%3D%22*%22%20AND%20%22display_avail%22%3D%22*%22%20AND%20%22display_interface_state%22%3D%22*%22%20AND%20%22display_rcode%22%3D%22*%22%20AND%20%22display_rtime%22%3D%22*%22%20)&form.all_filters_token=(%22display_overall%22%3D%22*%22%20OR%20%22display_avail%22%3D%22*%22%20OR%20%22display_interface_state%22%3D%22*%22%20OR%20%22display_rcode%22%3D%22*%22%20OR%20%22display_rtime%22%3D%22*%22)" target="_blank">Datapower Splunk</a></li>
   </ul>
-</div>
-<!-- Modal NON-PROD Servers DATA POWER -->
-<div class="modal fade modal-lg" id="DATAPOWER_SERVERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Servers</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentDP = `
+  <div>
+  <div class="popover-header text-bg-info"><b>Prod Servers</b></div>
+  <div class="popover-body">
+    <div class="col-6">
+    <div class="row">
+    <p><a href="https://datapower-prod0:9090/login.xml">Datapower-Prod0</a><p>
+    <p><a href="https://datapower-prod1:9090/login.xml">Datapower-Prod1</a><p>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>Non-Prod Servers</b></div>
+    <div class="popover-body">
+      <div class="col-6">
+      <div class="row">
+    <p>N/A<p>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-		<div class="col-6">
-		<a href="https://datapower-prod0:9090/login.xml">Datapower-Prod0</a>
-		</div>
-		<div class="col-6">
-		<a href="https://datapower-prod1:9090/login.xml">Datapower-Prod1</a>
-		</div>
-		</div>
-		</div>
       </div>
     </div>
-</div>
-<!-- Example single danger button -->
-<div class="btn-group">
+    </div>
+  </div>
+             `;
+             $('#popoverDATAPOWER').popover({
+                 trigger: 'manual',
+                 content: popoverContentDP,
+                 html: true,
+                 placement: 'right'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>  
+<!-- MQ Example single danger button POPOVER-->
+<div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    MQ
+                     MQ
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="https://changepwd.exbds.com/RDWeb/pages/en-us/password.aspx" target="_blank">Change Password exbds</a></li>
-    <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/WMQ/WMB_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverMQ1">PROD Servers</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverMQ2">NON-PROD Servers</a></li>
+  <li><a class="dropdown-item" href="https://changepwd.exbds.com/RDWeb/pages/en-us/password.aspx" target="_blank">Change Password EXBDS</a></li>
+  <li><a class="dropdown-item" href="https://changepwd.exelonds.com/RDWeb/pages/en-us/password.aspx" target="_blank">Change Password EXELONDS</a></li>
+  <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/WMQ/WMB_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
   </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentMQ1 = `
+<div>
+    <div class="popover-header text-bg-info"><b>MQ</b></div>
+  <div class="popover-body">
+    <div class="row">
+				<div class="col-6">
+					<p>cccunv572</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv573</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv574</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv575</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv102</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv103</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv104</p>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>LDOM</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <div class="col-6">
+					  <p>ldom-ccc-26</p>
+				  </div>
+				  <div class="col-6">
+					  <p>ldom-ccc-27</p>
+				  </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>Physical and Virtual</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <div class="col-6">
+					  <p>t42-ccc-08</p>
+				  </div>
+				  <div class="col-6">
+					  <p>t42-ccc-08z1</p>
+				  </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
 </div>
-<!-- Example single danger button -->
-<div class="btn-group">
+             `;
+             $('#popoverMQ1').popover({
+                 trigger: 'manual',
+                 content: popoverContentMQ1,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+<!------------------------------------------------------------------------------------ -->
+         $(document).ready(function(){
+             var popoverContentMQ2 = `
+<div>
+    <div class="popover-header text-bg-info"><b>MQ</b></div>
+  <div class="popover-body">
+    <div class="row">
+				<div class="col-6">
+					<p>cccunv512</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv513</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv514</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv515</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv531</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv532</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv541</p>
+				</div>
+				<div class="col-6">
+					<p>cccunv542</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv082</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv083</p>
+				</div>
+				<div class="col-6">
+					<p>mobunv084</p>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>LDOM</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <div class="col-6">
+					  <p>ldom-ccc-24</p>
+				  </div>
+				  <div class="col-6">
+					  <p>ldom-ccc-25</p>
+				  </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>Physical and Virtual</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <div class="col-6">
+					  <p>t41-ccc-04</p>
+				  </div>
+				  <div class="col-6">
+					  <p>t41z1-ccc-04</p>
+				  </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+</div>
+             `;
+             $('#popoverMQ2').popover({
+                 trigger: 'manual',
+                 content: popoverContentMQ2,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>  
+<!-- INFORMATICA Example single danger button POPOVER -->
+<div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Informatica
+                     Informatica
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#NON_PROD_INFORMATICA_SERVERS">NON-PROD Servers</a></li>
-	<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#PROD_INFORMATICA_SERVERS">PROD Servers</a></li>
-    <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/Informatica_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverInformatica">Servers</a></li>
+  <li><a class="dropdown-item" href="http://sqlrsdbp-omf-01/Reports/Pages/Report.aspx?ItemPath=%2fBSC%2fOracle+Inventory+Reports%2fOracle+database+accounts+and+expiration+dates&ViewMode=Detail" target="_blank">Oracle DB Accounts Expiry Date</a></li>
+<li><a class="dropdown-item" href="http://poas.exelonds.com:8080/nagios/" target="_blank">Nagios</a></li>
+  <li><a class="dropdown-item" href="https://exeloncorp.sharepoint.com/:x:/r/sites/EWSMiddlewareCourtyard/_layouts/15/doc2.aspx?sourcedoc=%7B8125b1fd-5353-4e0c-a0d4-a05aab8c93ef%7D&action=edit&activeCell=%27INFBSCD4%27!A119&wdinitialsession=3501daf5-218a-73c8-c0e4-7bad9d2587ef&wdrldsc=2&wdrldc=1&wdrldr=AccessTokenExpiredWarningUnauthenticated%2CRefreshin" target="_blank">Platform Services</a></li>
+  <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/Informatica_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
 	<li><a class="dropdown-item" href="https://exelontfs.visualstudio.com/Informatica/_versionControl" target="_blank">Informatica TFS</a></li>
-	<li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/informatica_clone" target="_blank">Informatica Splunk</a></li>
+  <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/informatica_clone" target="_blank">Informatica Splunk</a></li>
   </ul>
-</div>
-<!-- Modal NON-PROD Servers INFORMATICA -->
-<div class="modal fade modal-lg" id="NON_PROD_INFORMATICA_SERVERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Non-Prod Servers</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentInformatica = `
+  <div>
+  <div class="popover-header text-bg-info"><b>Prod Servers</b></div>
+  <div class="popover-body">
+    <div class="col-6">
+    <div class="row">
+    <a href="http://s72l-ccc-05.exelonds.com:6007/administrator/#admin" target="_blank">s72l-ccc-05</a>
+    <a href="http://s72l-ccc-06.exelonds.com:6008/administrator/#admin" target="_blank">s72l-ccc-06</a>
+<a href="http://s72l-ccc-07.exelonds.com:6008/administrator/#admin" target="_blank">s72l-ccc-07</a>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>Non-Prod Servers</b></div>
+    <div class="popover-body">
+      <div class="col-6">
+      <div class="row">
+    <a href="http://s72-ccc-03.exelonds.com:6007/administrator/#admin_domainOverview/" target="_blank">s72-ccc-03</a>
+    <a href="http://s72-ccc-04.exelonds.com:6008/administrator/#admin_domainOverview/" target="_blank">s72-ccc-04</a>
+<a href="http://s72-ccc-07.exelonds.com:6008/administrator/#admin_domainOverview/" target="_blank">s72-ccc-07</a>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-		<div class="col-6">
-		<a href="http://s72-ccc-03.exelonds.com:6007/administrator/#admin_domainOverview/" target="_blank">s72-ccc-03</a>
-		</div>
-		<div class="col-6">
-		<a href="http://s72-ccc-04.exelonds.com:6008/administrator/#admin_domainOverview/" target="_blank">s72-ccc-04</a>
-		</div>
-		</div>
-		</div>
       </div>
     </div>
-</div>
-<!-- Modal PROD Servers INFORMATICA -->
-<div class="modal fade modal-lg" id="PROD_INFORMATICA_SERVERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Prod Servers</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-		<div class="col-6">
-		<a href="http://s72l-ccc-05.exelonds.com:6007/administrator/#admin" target="_blank">s72l-ccc-05</a>
-		</div>
-		<div class="col-6">
-		<a href="http://s72l-ccc-06.exelonds.com:6008/administrator/#admin" target="_blank">s72l-ccc-06</a>
-		</div>
-		</div>
-		</div>
-      </div>
     </div>
-</div>
-<!-- Example single danger button -->
-<div class="btn-group">
+  </div>
+             `;
+             $('#popoverInformatica').popover({
+                 trigger: 'manual',
+                 content: popoverContentInformatica,
+                 html: true,
+                 placement: 'right'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>
+<!-- TIBCO Example single danger button POPOVER -->
+<div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    TIBCO
+                     TIBCO
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#NON_PROD_TIBCO_SERVERS">NON-PROD Servers</a></li>
-	<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#PROD_TIBCO_SERVERS">PROD Servers</a></li>
-    <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/Tibco_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
-    <li><a class="dropdown-item" href="http://tfs2013.exeloncorp.com:8080/tfs/CERCOLLECTION/CEG-TIBCO/_versionControl" target="_blank">TIBCO TFS</a></li>
-    <li><a class="dropdown-item" href="http://oracledbpwreset.exeloncorp.com/" target="_blank">Oracle DB PW Reset</a></li>
-    <li><a class="dropdown-item" href="https://exelon-prod.saas.appdynamics.com/controller/#/location=APP_INFRASTRUCTURE&timeRange=last_3_hours.BEFORE_NOW.-1.-1.180&application=571" target="_blank">Appdynamics</a></li>
-    <li><a class="dropdown-item" href="https://exeloncorp.sharepoint.com/:x:/r/sites/EWSMiddlewareCourtyard/Shared%20Documents/General/TIBCO/Admin%20Support_TIBCO/Environment%20Details%20and%20Passwords/TIBCO%20Domain%20Users%20Information.xlsx?d=w2fb48fb3a74141749d1e7af3947be11b&csf=1&web=1&e=0SGMMI" target="_blank">Domain User Information</a></li>
-	<li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/tibco_services_status_r4_final" target="_blank">TIBCO Splunk</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverTIBCO1">PROD Servers</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverTIBCO2">NON-PROD Servers</a></li>
+  <li><a class="dropdown-item" href="http://poas.exelonds.com:8080/erpedia/index.php/Tibco_Common_Troubleshooting_Guide" target="_blank">Notes</a></li>
+  <li><a class="dropdown-item" href="http://tfs2013.exeloncorp.com:8080/tfs/CERCOLLECTION/CEG-TIBCO/_versionControl" target="_blank">TIBCO TFS</a></li>
+  <li><a class="dropdown-item" href="http://oracledbpwreset.exeloncorp.com/" target="_blank">Oracle DB PW Reset</a></li>
+  <li><a class="dropdown-item" href="https://exelon-prod.saas.appdynamics.com/controller/#/location=APP_INFRASTRUCTURE&timeRange=last_3_hours.BEFORE_NOW.-1.-1.180&application=571" target="_blank">Appdynamics</a></li>
+  <li><a class="dropdown-item" href="https://exeloncorp.sharepoint.com/:x:/r/sites/EWSMiddlewareCourtyard/Shared%20Documents/General/TIBCO/Admin%20Support_TIBCO/Environment%20Details%20and%20Passwords/TIBCO%20Domain%20Users%20Information.xlsx?d=w2fb48fb3a74141749d1e7af3947be11b&csf=1&web=1&e=0SGMMI" target="_blank">Domain User Information</a></li>
+  <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/tibco_services_status_r4_final" target="_blank">TIBCO Splunk</a></li>
   </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentTIBCO1 = `
+<div>
+    <div class="popover-header text-bg-info"><b>NEW SERVERS</b></div>
+  <div class="popover-body">
+    <div class="row">
+				<div class="col-6">
+					<a href="http://eaiutlbwp-ccc-01:8080/" target="_blank">EAIEXELON-PROD (eaiutlbwp-ccc-01)</a>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>OLD SERVERS</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <div class="col-6">
+					  <a href="http://eaibwsp-ccc-01:8080/" target="_blank">EAIEXL-PROD (eaibwsp-ccc-01)</a>
+				  </div>
+				  <div class="col-6">
+					  <a href="http://eaibwsp-omf-01:8080/" target="_blank">EAI-PROD (eaibwsp-omf-01)</a>
+				  </div>
+          <div class="col-6">
+					  <a href="http://eaibwsp-omf-14.ceg.corp.net:8080/administrator/servlet/tibco_administrator?c.fid=com_tibco_administrator_ApplicationFrame_32870767" target="_blank">EAIBGE-PROD (eaibwsp-omf-14)</a>
+				  </div>
+          <div class="col-6">
+					  <a href="http://eaibwsp-omf-21:8080/" target="_blank">EAICORP-PROD (eaibwsp-omf-01)</a>
+				  </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
 </div>
-<!-- Modal NON-PROD Servers TIBCO -->
-<div class="modal fade modal-lg" id="NON_PROD_TIBCO_SERVERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Non-Prod Servers</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-	  <div class="card text-center">
-		  <div class="card-header text-bg-info">
-			<b>NEW SERVERS</b>
-		  </div>
-		  <div class="card-body">
-			<div class="row">
-			<hr /><h6 class="text-start"><i>STAGE SERVERS</i></h6>
+             `;
+             $('#popoverTIBCO1').popover({
+                 trigger: 'manual',
+                 content: popoverContentTIBCO1,
+                 html: true,
+                 placement: 'right'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+<!------------------------------------------------------------------------------------ -->
+         $(document).ready(function(){
+             var popoverContentTIBCO2 = `
+<div>
+    <div class="popover-header text-bg-info"><b>NEW SERVERS</b></div>
+  <div class="popover-body">
+    <div class="row">
+      <hr /><h6 class="text-start"><i>STAGE SERVERS</i></h6>
 				<div class="col-6">
 					<a href="http://eaiutlbwt-ccc-01:8080/administrator/servlet/tibco_administrator?c.fid=com_tibco_administrator_ApplicationFrame_104355030" target="_blank">EAIEXELON-STAGE (eaiutlbwt-ccc-01)</a>
 				</div>
@@ -226,16 +519,13 @@ body {
 				<div class="col-6">
 					<a href="http://eaiutlemsi-ccc-01:8080/" target="_blank">EAIEXELON-INT-PRJ (eaiutlemsi-ccc-01)</a>
 				</div>
-			</div>
-		  </div>
-		</div>
-		<div class="card text-center">
-		  <div class="card-header text-bg-info">
-			<b>OLD SERVERS</b>
-		  </div>
-		  <div class="card-body">
-			<div class="row">
-			<hr /><h6 class="text-start"><i>STAGE SERVERS</i></h6>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>OLD SERVERS</b></div>
+  <div class="popover-body">
+        <div class="row">
+				  <hr /><h6 class="text-start"><i>STAGE SERVERS</i></h6>
 				<div class="col-6">
 					<a href="http://eaibwst-ccc-01:8080/" target="_blank">EAIEXL-STAGE (eaibwst-ccc-01)</a>
 				</div>
@@ -261,101 +551,885 @@ body {
 				<div class="col-6">
 					<a href="http://eaibwsd-omf-24:8080/" target="_blank">EAIBGE-INT (eaibwsd-omf-2)</a>
 				</div>
-			</div>
-		  </div>
-		</div>
-  		</div>
-      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
     </div>
 </div>
-<!-- Modal PROD Servers TIBCO -->
-<div class="modal fade modal-lg" id="PROD_TIBCO_SERVERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Prod Servers</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-     <div class="modal-body">
-	  <div class="card text-center">
-  <div class="card-header text-bg-info">
-    <b>NEW SERVERS</b>
-  </div>
-  <div class="card-body">
-    			<div class="row">
-				<div class="col-6">
-					<a href="http://eaiutlbwp-ccc-01:8080/" target="_blank">EAIEXELON-PROD (eaiutlbwp-ccc-01)</a>
-				</div>
-				</div>
-  </div>
-	  </div>
-	  <div class="card text-center">
-  <div class="card-header text-bg-info">
-    <b>OLD SERVERS</b>
-  </div>
-  <div class="card-body">
-    	<div class="row">
-			<div class="col-6">
-				<a href="http://eaibwsp-ccc-01:8080/" target="_blank">EAIEXL-PROD (eaibwsp-ccc-01)</a>
-			</div>
-			<div class="col-6">
-				<a href="http://eaibwsp-omf-01:8080/" target="_blank">EAI-PROD (eaibwsp-omf-01)</a>
-			</div>
-			<div class="col-6">
-				<a href="http://eaibwsp-omf-14.ceg.corp.net:8080/administrator/servlet/tibco_administrator?c.fid=com_tibco_administrator_ApplicationFrame_32870767" target="_blank">EAIBGE-PROD (eaibwsp-omf-14)</a>
-			</div>
-			<div class="col-6">
-				<a href="http://eaibwsp-omf-21:8080/" target="_blank">EAICORP-PROD (eaibwsp-omf-01)</a>
-			</div>
-		</div>
-  </div>
-	  </div>
-	 </div>
-    </div>
-  </div>
-</div>
-<!-- Example single danger button -->
-<div class="btn-group">
+             `;
+             $('#popoverTIBCO2').popover({
+                 trigger: 'manual',
+                 content: popoverContentTIBCO2,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>
+<!-- APIGEE Example single danger button POPOVER -->
+<div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Apigee
+                     Apigee
   </button>
   <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" id="popoverApigee">Servers</a></li>
     <li><a class="dropdown-item" href="https://portal.azure.com/#home" target="_blank">Azure Portal</a></li>
     <li><a class="dropdown-item" href="https://login.apigee.com/login" target="_blank">Console</a></li>
-	<li><a class="dropdown-item" href="https://www.base64decode.org/" target="_blank">Decoder/Encoder</a></li>
-    <li><hr class="dropdown-divider"></li>
-	<li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/apigee" target="_blank">Apigee Splunk</a></li>
+	  <li><a class="dropdown-item" href="https://www.base64decode.org/" target="_blank">Decoder/Encoder</a></li>
+    <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/apigee" target="_blank">Apigee Splunk</a></li>
   </ul>
-</div>
-<!-- Example single danger button -->
-<div class="btn-group">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentApigee = `
+  <div>
+  <div class="popover-header text-bg-info"><b>Prod Servers</b></div>
+  <div class="popover-body">
+    <div class="row">
+    <div class="col">
+    <p>apigeeapp-101.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-102.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-201.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-202.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-301.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-302.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-401.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapp-402.exelonds.com</p>
+    </div>
+    </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
+    </div>
+  </div>
+    <div class="popover-header text-bg-info"><b>Non-Prod Servers</b></div>
+    <div class="popover-body">
+      <div class="row">
+    <div class="col-6">
+    <p>apigeeapa-101.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapa-301.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapd-201.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapd-401.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapi-101.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeapi-201.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-101.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-102.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-201.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-202.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-301.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-302.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-401.exelonds.com</p>
+    </div>
+    <div class="col-6">
+    <p>apigeeaps-402.exelonds.com</p>
+    </div>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+             `;
+             $('#popoverApigee').popover({
+                 trigger: 'manual',
+                 content: popoverContentApigee,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>
+<!-- BOOMI Example single danger button POPOVER -->
+<div class="btn-group" role="group" aria-label="Button group with popovers">
   <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Boomi
+                     Boomi
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="http://jenkn00bud-001:8080/" target="_blank">Jenkins</a></li>
-    <li><a class="dropdown-item" href="https://status.boomi.com/" target="_blank">Boomi Status</a></li>
-    <li><a class="dropdown-item" href="https://platform.boomi.com/" target="_blank">Console</a></li>
-	<li><hr class="dropdown-divider"></li>
-	<li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/boomi" target="_blank">Boomi Splunk</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverBoomi1">PROD Servers</a></li>
+  <li><a class="dropdown-item" href="#" id="popoverBoomi2">NON-PROD Servers</a></li>
+  <li><a class="dropdown-item" href="https://status.boomi.com/" target="_blank">Boomi Status</a></li>
+  <li><a class="dropdown-item" href="https://platform.boomi.com/" target="_blank">Console</a></li>
+  <li><a class="dropdown-item" href="http://mywizarapp-001.exelonds.com:8000/en-US/app/exelon_custom_mw_dashboard/boomi" target="_blank">Boomi Splunk</a></li>
   </ul>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+         $(document).ready(function(){
+             var popoverContentBoomi1 = `
+<div>
+    <div class="popover-header text-bg-info"><b>PRDC_EEN_Corp_Cloud</b></div>
+  <div class="popover-body">
+    <div class="row">
+        <div class="col">
+        <p>boomieapp-201.exelonds.com</p>
+        </div>
+        <div class="col-6">
+        <p>boomieapp-202.exelonds.com</p>
+        </div>
+        <div class="col-6">
+        <p>boomieapp-203.exelonds.com</p>
+        </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+    </div>
   </div>
+    <div class="popover-header text-bg-info"><b>PRDC_EEN_EUD01_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>abmeudigapp-201.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-202.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-203.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-204.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-205.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-206.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRDC_Gen_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>boomicapp-001.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomicapp-002.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomicapp-003.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRDC_RED_CORP_CLOUD</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>boomirappz-004.excld.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomirappz-005.excld.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomirappz-006.excld.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRDE_EEN_EUD01_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmeudigapp-101.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-102.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-103.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-104.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-105.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeudigapp-106.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRDE_Gen_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>boomioapp-001.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomioapp-002.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomioapp-003.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRDE_RED_CORP_CLOUD</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>boomirappz-001.excld.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomirappz-002.excld.com</p>
+      </div>
+      <div class="col-6">
+      <p>boomirappz-003.excld.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_ADMS_CENTRAL_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmadmsapp-201.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-202.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-203.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_ADMS_CENTRAL_Cloud_DR</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmadmsapp-701.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-703.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-703.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_ADMS_EAST_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmadmsapp-101.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-102.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-103.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_ADMS_EAST_Cloud_DR</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmadmsapp-801.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-802.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmadmsapp-803.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_GIS_CENTRAL_Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmeugisapp-201.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeugisapp-202.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeugisapp-203.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>PRD_EEN_GIS_EAST_ Cloud</b></div>
+  <div class="popover-body">
+        <div class="row">
+      <div class="col-6">
+      <p>bmeugisapp-101.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeugisapp-102.exelonds.com</p>
+      </div>
+      <div class="col-6">
+      <p>bmeugisapp-103.exelonds.com</p>
+      </div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
 </div>
+             `;
+             $('#popoverBoomi1').popover({
+                 trigger: 'manual',
+                 content: popoverContentBoomi1,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+<!------------------------------------------------------------------------------------ -->
+         $(document).ready(function(){
+             var popoverContentBoomi2 = `
+<div>
+    <div class="popover-header text-bg-info"><b>STAGE SERVERS</b></div>
+  <div class="popover-body">
+    <div class="row">
+      <hr /><h6 class="text-start"><i>STGC_EEN_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomieaps-201.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieaps-202.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieaps-203.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STGC_Gen_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomicaps-001.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomicaps-002.exelonds.com</p>
+				</div>
+        <div class="col-6">
+				  <p>boomicaps-003.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STGC_RED_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomirapsz-004.excld.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomirapsz-005.excld.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomirapsz-006.excld.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STGE_EEN_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomieaps-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieaps-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomieaps-103.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STGE_Gen_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomioaps-001.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomioaps-002.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomioaps-003.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STGE_RED_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomirapsz-001.excld.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomirapsz-002.excld.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomirapsz-003.excld.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_ADMS_CENTRAL_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmadmsaps-201.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsaps-202.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsaps-203.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_ADMS_CENTRAL_Cloud_DR</i></h6>
+				<div class="col-6">
+					<p>bmadmsaps-701.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsaps-702.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsaps-703.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_ADMS_EAST_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmadmsaps-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsaps-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsaps-103.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_ADMS_EAST_Cloud_DR</i></h6>
+				<div class="col-6">
+					<p>bmadmsaps-801.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsaps-802.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsaps-803.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_EUD01_CENTRAL_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmeudigaps-201.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-202.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeudigaps-203.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-204.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-205.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeudigaps-206.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_EUD01_EAST_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmeudigaps-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeudigaps-103.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-104.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeudigaps-105.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeudigaps-106.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_GIS_CENTRAL_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmeugisaps-201.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeugisaps-202.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeugisaps-203.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>STG_EEN_GIS_EAST_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmeugisaps-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmeugisaps-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmeugisaps-103.exelonds.com</p>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>DEV SERVERS</b></div>
+  <div class="popover-body">
+    <div class="row">
+      <hr /><h6 class="text-start"><i>DEVE_EEN_ADMS_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmadmsapd-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapd-102.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapd-103.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>DEVE_RED_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomirapdz-001.excld.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomirapdz-002.excld.com</p>
+				</div>
+        <div class="col-6">
+				  <p>boomirapdz-003.excld.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>DEV_EEN_Corp_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomieapd-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieapd-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomieapd-103.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieapd-104.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomieapd-105.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomieapd-106.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>DEV_Gen_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomioapd-101v.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomioapd-102v.exelonds.com</p>
+				</div>
+        <div class="col-6">
+				  <p>boomioapd-103v.exelonds.com</p>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+    <div class="popover-header text-bg-info"><b>INT SERVERS</b></div>
+  <div class="popover-body">
+    <div class="row">
+      <hr /><h6 class="text-start"><i>INT_EEN_ADMS_CENTRAL_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmadmsapt-201.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapt-202.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapt-203.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>INT_EEN_ADMS_CENTRAL_Cloud_DR</i></h6>
+				<div class="col-6">
+					<p>bmadmsapt-701.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapt-702.exelonds.com</p>
+				</div>
+        <div class="col-6">
+				  <p>bmadmsapt-703.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>INT_EEN_ADMS_EAST_Cloud</i></h6>
+				<div class="col-6">
+					<p>bmadmsapt-101.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapt-102.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsapt-103.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>INT_EEN_ADMS_EAST_Cloud_DR</i></h6>
+				<div class="col-6">
+					<p>bmadmsapt-801.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>bmadmsapt-802.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>bmadmsapt-803.exelonds.com</p>
+				</div>
+      <hr /><h6 class="text-start"><i>INT_Gen_Cloud</i></h6>
+				<div class="col-6">
+					<p>boomioapi-101v.exelonds.com</p>
+				</div>
+				<div class="col-6">
+					<p>boomioapi-102v.exelonds.com</p>
+				</div>
+  			<div class="col-6">
+					<p>boomioapi-103v.exelonds.com</p>
+				</div>
+  <button class="btn btn-sm btn-secondary mb-2" onclick="alert('Option 1 clicked!')">Option 1</button>
+        </div>
+    </div>
+</div>
+             `;
+             $('#popoverBoomi2').popover({
+                 trigger: 'manual',
+                 content: popoverContentBoomi2,
+                 html: true,
+                 placement: 'bottom'
+             }).on('mouseenter', function () {
+                 var _this = this;
+                 $(this).popover('show');
+                 $('.popover').on('mouseleave', function () {
+                     $(_this).popover('hide');
+                 });
+             }).on('mouseleave', function () {
+                 var _this = this;
+                 setTimeout(function () {
+                     if (!$('.popover:hover').length) {
+                         $(_this).popover('hide');
+                     }
+                 }, 100);
+             });
+         });
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!-- Card -->
-<div class="card" style="width: 18rem;">
+<div class="row">
+<div class="col-3">
+<div class="card">
   <img src="shutterstock_report-document.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Report Links</h5>
+<h5 class="card-title">Non Fusion Report Links</h5>
   </div>
   <ul class="list-group list-group-flush">
-	<li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/StatusReports-Initiatives/Touch%20Base?csf=1&web=1&e=IBwKQb" target="_blank">Touchbase Report (M-W-F - 9pm)</a></li>
-	<li class="list-group-item"><a href="https://ts.accenture.com/sites/ITSPP2Middleware/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FITSPP2Middleware%2FShared%20Documents%2FGeneral%2FApigee%20Sync%20Up%20Report&viewid=b65c2ff0%2Dbd06%2D4d0a%2D9404%2D8b9f03736b35" target="_blank">Apigee & TIBCO Sync-up (Tuesday - 10:30pm) "Varinder"</a></li>
-	<li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/Informatica%20Sync%20Up%20Report?csf=1&web=1&e=cTKP32" target="_blank">Informatica Sync-Up (Wednesday - 9:30pm) "Lakshmi"</a></li>
-    <li class="list-group-item"><a href="https://exeloncorp.sharepoint.com/sites/EWSMiddlewareCourtyard/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=Uzo7jg&cid=df512ac6%2D978f%2D4cc7%2Dbf0c%2D0b7fa0972fb1&FolderCTID=0x012000D74AD75ADB6F90438354EADB6651B614&id=%2Fsites%2FEWSMiddlewareCourtyard%2FShared%20Documents%2FGeneral%2FOthers%2FWeekly%20Work%20Plan&sortField=Modified&isAscending=false&viewid=bed9d83c%2D25a9%2D4f15%2Da1a8%2Dfca006bb0163" target="_blank">Weekly Work Plan (Thursday - 10pm)</a></li>
-    <li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/SPO%2094%20Dell%20Boomi%20Apigee%20Platform%20Support/Knowledge%20Transition/Related%20Documents/Dell%20Boomi%20Scrum%20Call?csf=1&web=1&e=mqs5bx" target="_blank">Dell Boomi Sync-up (Thursday - 9pm) "Govind"</a></li>
+	<li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/StatusReports-Initiatives/Touch%20Base?csf=1&web=1&e=IBwKQb" target="_blank">Touchbase Report </a><p>(M-W-F - 9pm)</p></li>
+	<li class="list-group-item"><a href="https://ts.accenture.com/sites/ITSPP2Middleware/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FITSPP2Middleware%2FShared%20Documents%2FGeneral%2FApigee%20Sync%20Up%20Report&viewid=b65c2ff0%2Dbd06%2D4d0a%2D9404%2D8b9f03736b35" target="_blank">Apigee & TIBCO Sync-up </a><p>(Wednesday - 11:30pm)</p><p>"Singh, Varinderjit"</p></li>
+	<li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/Informatica%20Sync%20Up%20Report?csf=1&web=1&e=cTKP32" target="_blank">Informatica Sync-Up </a><p>(Wednesday - 9:30pm)</p> <p>"Alokam, Lakshmi"</p></li>
+    <li class="list-group-item"><a href="https://exeloncorp.sharepoint.com/sites/EWSMiddlewareCourtyard/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=Uzo7jg&cid=df512ac6%2D978f%2D4cc7%2Dbf0c%2D0b7fa0972fb1&FolderCTID=0x012000D74AD75ADB6F90438354EADB6651B614&id=%2Fsites%2FEWSMiddlewareCourtyard%2FShared%20Documents%2FGeneral%2FOthers%2FWeekly%20Work%20Plan&sortField=Modified&isAscending=false&viewid=bed9d83c%2D25a9%2D4f15%2Da1a8%2Dfca006bb0163" target="_blank">Weekly Work Plan</a><p>(Thursday - 10pm)</p></li>
+    <li class="list-group-item"><a href="https://ts.accenture.com/:f:/r/sites/ITSPP2Middleware/Shared%20Documents/General/SPO%2094%20Dell%20Boomi%20Apigee%20Platform%20Support/Knowledge%20Transition/Related%20Documents/Dell%20Boomi%20Scrum%20Call?csf=1&web=1&e=mqs5bx" target="_blank">Dell Boomi Sync-up </a><p><p>(Friday - 9pm)</p> <p>"Ramalingam, Govindaraju"</p></p></li>
   </ul>
 </div>
+</div>
+<!--ANOUNCEMENTS FOR THE TEAM-->
+<div class="col-8">
+<div >
+  <h2>Post It Notes</h2>
+  <!-- Announcement Form -->
+  <form id="announcement-form">
+  <div class="form-group">
+  <label for="announcement-title">Title:</label>
+  <input type="text" class="form-control" id="announcement-title" placeholder="Enter title" style="opacity:0.8">
+  </div>
+  <div class="form-group">
+  <label for="announcement-body">Notes:</label>
+  <textarea class="form-control" id="announcement-body" rows="3" placeholder="Enter announcement" style="opacity:0.8"></textarea>
+  </div>
+  <button type="button" class="btn btn-primary" onclick="addAnnouncement()">Post Note</button>
+  <button type="button" class="btn btn-secondary ml-2" onclick="downloadAnnouncements()">Download Note</button>  
+</form>
+  <!-- Announcements Section -->
+  <div id="announcements" class="mt-4 w-100" >
+  <!-- Individual announcements will be appended here -->
+  </div>
+  </div>
+  <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Summernote JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
+  <!-- Summernote Initialization -->
+  <script>
+   $(document).ready(function() {
+     $('#announcement-body').summernote({
+       height: 200,
+       disableResizeEditor: false,
+       toolbar: [
+         ['style', ['style']],
+         ['font', ['bold', 'italic', 'underline', 'clear']],
+         ['fontname', ['fontname']],
+         ['color', ['color']],
+         ['para', ['ul', 'ol', 'paragraph']],
+         ['height', ['height']],
+         ['insert', ['link', 'picture', 'video']],
+         ['view', ['fullscreen', 'codeview', 'help']]
+       ]
+     });
+   });
+  </script>
+  <!-- Custom Script -->
+  <script>
+   let announcements = [];
+   let editingIndex = -1;
+   function addAnnouncement() {
+     const title = document.getElementById('announcement-title').value;
+     const body = $('#announcement-body').summernote('code');
+     const date = new Date().toLocaleString();
+     if (title && body) {
+       if (editingIndex === -1) {
+         announcements.push({ title, body, date });
+       } else {
+         announcements[editingIndex] = { title, body, date };
+         editingIndex = -1;
+       }
+       saveAnnouncements();
+       renderAnnouncements();
+       document.getElementById('announcement-form').reset();
+       $('#announcement-body').summernote('reset');
+     } else {
+       alert('Please fill out both the title and the announcement body.');
+     }
+   }
+   function renderAnnouncements() {
+     const announcementsDiv = document.getElementById('announcements');
+     announcementsDiv.innerHTML = '';
+     // Sort announcements by date (latest first)
+     announcements.sort((a, b) => new Date(b.date) - new Date(a.date));
+     announcements.forEach((announcement, index) => {
+       const announcementCard = document.createElement('div');
+       announcementCard.className = 'card mt-3';
+       const announcementHeader = document.createElement('div');
+       announcementHeader.className = 'card-header d-flex justify-content-between';
+       announcementHeader.innerHTML = `
+  <span>${announcement.title}</span>
+  <span>
+  <button class="btn btn-sm btn-info" onclick="editAnnouncement(${index})">Edit</button>
+  <button class="btn btn-sm btn-danger" onclick="deleteAnnouncement(${index})">Delete</button>
+  </span>
+       `;
+       const announcementBody = document.createElement('div');
+       announcementBody.className = 'card-body';
+       announcementBody.innerHTML = `
+  <div>${announcement.body}</div>
+  <small class="text-muted">Posted on: ${announcement.date}</small>
+       `;
+       announcementCard.appendChild(announcementHeader);
+       announcementCard.appendChild(announcementBody);
+       announcementsDiv.appendChild(announcementCard);
+     });
+   }
+   function editAnnouncement(index) {
+     const announcement = announcements[index];
+     document.getElementById('announcement-title').value = announcement.title;
+     $('#announcement-body').summernote('code', announcement.body);
+     editingIndex = index;
+   }
+   function deleteAnnouncement(index) {
+     announcements.splice(index, 1);
+     saveAnnouncements();
+     renderAnnouncements();
+   }
+   function saveAnnouncements() {
+     localStorage.setItem('announcements', JSON.stringify(announcements));
+    }
+ function downloadAnnouncements() {
+   let text = 'Announcements\n\n';
+   announcements.forEach(announcement => {
+     text += `Title: ${announcement.title}\n`;
+     text += `Date: ${announcement.date}\n`;
+     text += `Body: ${announcement.body.replace(/<[^>]*>?/gm, '')}\n`;  // Remove HTML tags
+     text += '\n----------------------\n\n';
+   });
+   const blob = new Blob([text], { type: 'text/plain' });
+   const url = URL.createObjectURL(blob);
+   const a = document.createElement('a');
+   a.href = url;
+   a.download = 'announcements.txt';
+   document.body.appendChild(a);
+   a.click();
+   document.body.removeChild(a);
+   URL.revokeObjectURL(url);
+ }
+   // Load announcements from local storage when the page loads
+   document.addEventListener('DOMContentLoaded', () => {
+     const storedAnnouncements = JSON.parse(localStorage.getItem('announcements'));
+     if (storedAnnouncements) {
+       announcements = storedAnnouncements;
+       renderAnnouncements();
+     }
+   });
+  </script>
+</div>
+</div>
+</div>
+<!-- Summernote CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css" rel="stylesheet">
+<style>
+   .center-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+   }
+</style>
   </body>
 </html>
